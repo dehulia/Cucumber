@@ -8,14 +8,14 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import utility.Hook;
 
-public class GoogleSearch {
+public class TestGoogleSearch {
 
 	private WebDriver driver;
 	
-	public GoogleSearch() {
+	public TestGoogleSearch() {
 		this.driver = Hook.getDriver();
 	}
-	
+
 	@Given("^I open a browser$")
 	public void i_open_a_browser() throws Throwable {
 		System.out.println("Browser is opened successfully");
@@ -30,5 +30,5 @@ public class GoogleSearch {
 	public void i_validate_the_search_text_field() throws Throwable {
 		Assert.assertTrue(driver.findElement(By.name("q")).isDisplayed());
 	}
-	
+
 }
