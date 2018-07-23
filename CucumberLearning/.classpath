@@ -11,5 +11,8 @@
 	<classpathentry kind="lib" path="C:/Users/invde/git_Cucumber/CucumberLearning/cucumber_lib/gherkin-2.12.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/invde/git_Cucumber/CucumberLearning/cucumber_lib/junit-4.12.jar"/>
 	<classpathentry kind="lib" path="C:/Users/invde/git_Cucumber/CucumberLearning/cucumber_lib/mockito-all-2.0.2-beta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/invde/git_Cucumber/CucumberWithTestNG/cucumber_lib/testng-6.9.13.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/invde/git_Cucumber/CucumberWithTestNG/cucumber_lib/cucumber-testng-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/invde/git_Cucumber/CucumberWithTestNG/cucumber_lib/selenium-java-3.0.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
