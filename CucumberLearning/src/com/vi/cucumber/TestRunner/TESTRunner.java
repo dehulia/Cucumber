@@ -11,7 +11,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		
 		features = "Features",
-		glue = {"TestCode"}
+		glue = {"com.vi.cucumber.Test"}
 		
 		)
 
