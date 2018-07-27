@@ -1,0 +1,6 @@
+coverage/
+Gemfile.lock
+pkg/
+.deps
+.tested
+dots-formatter-go/

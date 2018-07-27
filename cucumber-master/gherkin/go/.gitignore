@@ -1,0 +1,12 @@
+.deps
+.linked
+.tested
+.built
+.compared
+.dist
+.dist-compressed
+bin/gherkin
+bin/gherkin-generate-tokens
+acceptance/
+dist_compressed/
+dist/

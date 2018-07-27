@@ -1,0 +1,69 @@
+#!/usr/bin/env ruby
+$VERBOSE=nil # Shut up JRuby warnings on Travis
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__),"../lib"))
+
+require 'optparse'
+require 'json'
+require 'gherkin/exe_file.rb'
+require 'gherkin/gherkin'
+require 'gherkin/protobuf_cucumber_messages'
+
+options = {
+  print_source: true,
+  print_ast: true,
+  print_pickles: true,
+  protobuf: false
+}
+
+OptionParser.new do |opts|
+  opts.on("--[no-]source", "Don't print source messages") do |v|
+    options[:print_source] = v
+  end
+  opts.on("--[no-]ast", "Don't print ast messages") do |v|
+    options[:print_ast] = v
+  end
+  opts.on("--[no-]pickles", "Don't print pickle messages") do |v|
+    options[:print_pickles] = v
+  end
+  opts.on("--protobuf", "Print messages as Protocol Buffers") do |v|
+    options[:protobuf] = v
+  end
+end.parse!
+
+def print_messages(messages)
+  messages.each do |message|
+    json = message.class.encode_json(message)
+    # puts json
+    ob = JSON.parse(json)
+    remove_empties(ob)
+    puts JSON.generate(ob)
+  end
+end
+
+def remove_empties(ob)
+  if Hash === ob
+    ob.each do |key, value|
+      if value == []
+        ob.delete(key)
+      else
+        remove_empties(value)
+      end
+    end
+  elsif Array === ob
+    ob.each do |value|
+      remove_empties(value)
+    end
+  end
+end
+
+messages = ARGV.empty? ? 
+  # Read protobuf from STDIN
+  Gherkin::ProtobufCucumberMessages.new(STDIN).messages
+  :
+  Gherkin::Gherkin.new(
+    ARGV,
+    options[:print_source],
+    options[:print_ast],
+    options[:print_pickles]
+  ).messages
+print_messages(messages)

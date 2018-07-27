@@ -7,11 +7,10 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 @CucumberOptions(features={"src//test//java//features"}
 					,glue={"stepdefinations","utility"}
 					,plugin = {"pretty", "html:target/cucumber"}
-					, tags ={"@web"}
+					//, tags ={"@web"}
 		)
 
 @Test
 public class RunTest extends AbstractTestNGCucumberTests{
-	
  
 }
