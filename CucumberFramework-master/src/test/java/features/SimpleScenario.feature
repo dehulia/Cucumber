@@ -11,5 +11,3 @@ Feature: Google Search
     Given I found browser with x data
     When I navigate to google page to find y site
     Then I validate the search text field with z input
-    
-    
