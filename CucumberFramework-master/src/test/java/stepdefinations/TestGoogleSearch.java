@@ -41,7 +41,7 @@ public void i_navigate_to_google_page() throws Throwable {
 	
 	System.out.println("Testing Scenario 1 Test 2 " );
 	
-	Response resp = RestAssured.get("http://localhost:8080/rest/");
+	Response resp = RestAssured.get("http://localhost:8080/mock/webapi/messages");
 	
 	int code=resp.getStatusCode();
 	
@@ -58,7 +58,7 @@ public void i_validate_the_search_text_field() throws Throwable {
 	int code=0;
 	
 	try{
-		Response resp = RestAssured.get("http://localhost:8080/rest1/");
+		Response resp = RestAssured.get("http://localhost:8080/mock/webapi/messages");
 	    code=resp.getStatusCode();
 	    Assert.assertEquals(code, 200);
 	}/*catch(java.lang.AssertionError e){

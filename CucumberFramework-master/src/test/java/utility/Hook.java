@@ -1,5 +1,6 @@
 package utility;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,8 +17,18 @@ public class Hook {
 	@Before("@web")
 	public void setUp()
 	{
-		/*System.setProperty("jacob.dll.path", "D:\\jacob-1.17-M2-x86.dll");
-
+		String current = null;
+		try {
+			current = new java.io.File( "." ).getCanonicalPath();
+			System.out.println("Current dir:"+current);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		System.setProperty("jacob.dll.path", current + "\\drivers\\jacob-1.19\\jacob-1.17-M2-x86.dll");
+/*
 		LibraryLoader.loadJacobLibrary();
 		
 		
