@@ -3,6 +3,9 @@ package utility;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.jacob.com.LibraryLoader;
+
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 
@@ -13,7 +16,7 @@ public class Hook {
 	@Before("@web")
 	public void setUp()
 	{
-		System.setProperty("jacob.dll.path", "D:\\jacob-1.17-M2-x86.dll");
+		/*System.setProperty("jacob.dll.path", "D:\\jacob-1.17-M2-x86.dll");
 
 		LibraryLoader.loadJacobLibrary();
 		
@@ -29,7 +32,7 @@ public class Hook {
 
 		wrapper.updateResult("SampleTestSetFolder\\SubTestSetFolder1",
 		                        "TestSet3", 62, "Login", StatusAs.BLOCKED);
-		wrapper.close();
+		wrapper.close();*/
 		
 		
 		//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//drivers//chromedriver.exe");

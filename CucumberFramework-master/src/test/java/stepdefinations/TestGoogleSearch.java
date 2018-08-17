@@ -23,7 +23,7 @@ public class TestGoogleSearch {
 public void i_open_a_browser() throws Throwable {
     // Write code here that turns the phrase above into concrete actions
 	System.out.println("Testing Scenario 1 Test 1 " );
-	Response resp = RestAssured.get("http://10.160.32.172:8080/rest/webapi/messages");
+	Response resp = RestAssured.get("http://localhost:8080/mock/webapi/messages");
 	
 	int code=resp.getStatusCode();
 	

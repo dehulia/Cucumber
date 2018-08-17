@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.cucumber</groupId>
+	<groupId>runner</groupId>
 	<artifactId>cucumberframework</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<properties>
@@ -37,12 +37,27 @@
 			<version>6.10</version>
 			<scope>test</scope>
 		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
 		<dependency>
 		    <groupId>io.rest-assured</groupId>
 		    <artifactId>rest-assured</artifactId>
 		    <version>3.0.0</version>
 		    <scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/net.sf.jacob-project/jacob -->
+		<dependency>
+		    <groupId>net.sf.jacob-project</groupId>
+		    <artifactId>jacob</artifactId>
+		    <version>1.14.3</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/tanukisoft/wrapper -->
+		<dependency>
+		    <groupId>tanukisoft</groupId>
+		    <artifactId>wrapper</artifactId>
+		    <version>3.2.0</version>
 		</dependency>
 
 	</dependencies>
