@@ -1,12 +1,11 @@
 package utility;
 
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import com.jacob.com.LibraryLoader;
-
+import atu.alm.wrapper.ALMServiceWrapper;
+import atu.alm.wrapper.enums.StatusAs;
+import atu.alm.wrapper.exceptions.ALMServiceException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 
@@ -27,23 +26,46 @@ public class Hook {
 		}
 		
 		
-		System.setProperty("jacob.dll.path", current + "\\drivers\\jacob-1.19\\jacob-1.17-M2-x86.dll");
-/*
+		System.setProperty("jacob.dll.path", current + "\\drivers\\jacob-1.19\\jacob-1.19-x86.dll");
+
 		LibraryLoader.loadJacobLibrary();
 		
-		
-		ALMServiceWrapper wrapper = new ALMServiceWrapper(    "http://localhost:8081/qcbin");
-		wrapper.connect("admin", "admin", "DEFAULT", "SampleProject");
+		ALMServiceWrapper wrapper = new ALMServiceWrapper(    "http://srv00230/qcbin");
+		try {
+			wrapper.connect("invde", "EvaEva2@", "PROJECTS_BHS", "P73977_Noi_Bai_R012");
+		} catch (ALMServiceException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-		wrapper.updateResult("SampleTestSetFolder", "TestSet1", 92, "Logout",
-		                        StatusAs.FAILED);
+		try {
+			
+			wrapper.updateResult("TEST", "TestSet1", 15921, "CAT_OPS_CheckIn",
+                    StatusAs.FAILED);
+			
+			/*wrapper.updateResult("Resources\\SampleTestSetFolder", "TestSet1", 92, "Logout",
+			                        StatusAs.FAILED);*/
+		} catch (ALMServiceException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-		wrapper.updateResult("SampleTestSetFolder\\SubTestSetFolder1",
-		                        "TestSet1", 61, "Logout", StatusAs.PASSED);
+		try {
+			wrapper.updateResult("Resources\\SampleTestSetFolder",
+			                        "TestSet1", 61, "Logout", StatusAs.PASSED);
+		} catch (ALMServiceException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-		wrapper.updateResult("SampleTestSetFolder\\SubTestSetFolder1",
-		                        "TestSet3", 62, "Login", StatusAs.BLOCKED);
-		wrapper.close();*/
+		try {
+			wrapper.updateResult("SampleTestSetFolder\\SubTestSetFolder1",
+			                        "TestSet3", 62, "Login", StatusAs.BLOCKED);
+		} catch (ALMServiceException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		wrapper.close();
 		
 		
 		//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//drivers//chromedriver.exe");

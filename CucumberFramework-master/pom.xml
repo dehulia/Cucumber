@@ -8,16 +8,19 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
+	
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-java</artifactId>
 			<version>1.2.5</version>
 		</dependency>
+		
   		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-server</artifactId>
 			<version>3.1.0</version>
 		</dependency>
+		
 		<!-- Below Dependency for TestNG -->
 		<dependency>
 			<groupId>info.cukes</groupId>
@@ -31,6 +34,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
@@ -60,7 +64,17 @@
 		    <version>3.2.0</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.aludratest/aludratest-hpalm-connector -->
+		<dependency>
+		    <groupId>org.aludratest</groupId>
+		    <artifactId>aludratest-hpalm-connector</artifactId>
+		    <version>1.0.1</version>
+		</dependency>
+
+
 	</dependencies>
+	
+	
 	<build>
 		<plugins>
 			<plugin>
